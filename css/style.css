@@ -1,0 +1,27 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #0b1020;
+  overflow: hidden;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+#game-wrap {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  /* logické rozlišení 960x540, škáluje se na okno se zachováním poměru */
+  width: min(100vw, 177.78vh);   /* 16:9 */
+  height: min(56.25vw, 100vh);
+  image-rendering: pixelated;
+  background: #7ec8e3;
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  touch-action: none;
+}
