@@ -2,7 +2,7 @@
 
 ## Spuštění (nutný HTTP server kvůli ES modulům)
 ```
-cd /home/lulin/Working/orech1
+cd orech1
 python3 -m http.server 8137
 # otevři http://localhost:8137/index.html
 ```
@@ -14,14 +14,17 @@ python3 -m http.server 8137
 4. Sbírej ořech **své barvy** (jasná barevná svatozář). `!` ořech = past → honič → konec.
 
 ## Automatické testy (Playwright přes systémový Chrome)
-Testy leží v `/tmp/orech_*.mjs` (dočasné). Vyžadují běžící server na portu 8137.
-```
-node /tmp/orech_test.mjs      # načtení, běh, pohyb 4 hráčů, screenshot /tmp/orech_play.png
-node /tmp/orech_collect.mjs   # sběr: shodná barva sbírá, jiná ne
-node /tmp/orech_mech.mjs      # ! past → honič → game over
-```
-Chrome se pouští s `executablePath: '/usr/bin/google-chrome'` (nainstalované PW browsery
-mají nesouhlasnou verzi). Modul PW: `/usr/local/lib/node_modules/@playwright/mcp/node_modules/playwright`.
+> **Pozn.:** tyto testy nejsou součástí repozitáře — jde o dočasné skripty psané ad hoc
+> do lokálního `tmp` adresáře. Popis níže slouží jako recept, jak si je znovu vytvořit.
+
+Skripty (`orech_test.mjs`, `orech_collect.mjs`, `orech_mech.mjs`) vyžadují běžící server
+na portu 8137 a pokrývají:
+- načtení stránky, běh smyčky, pohyb 4 hráčů, screenshot
+- sběr ořechů: shodná barva sbírá, jiná ne
+- `!` past → honič → game over
+
+Chrome se pouští s `executablePath` na systémový prohlížeč (nainstalované PW browsery
+mívají nesouhlasnou verzi s lokálním modulem Playwrightu).
 
 ## Ladicí hook
 `window.__game` odkazuje na centrální stav (state, players, nuts, obstacles, chasers, score).

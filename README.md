@@ -3,7 +3,10 @@
 Kooperativní 2D plošinovka v prohlížeči pro **1–4 hráče na jedné klávesnici**.
 Čistý HTML5 Canvas + vanilla JS, bez závislostí a bez build kroku.
 
-## Spuštění
+## ▶️ Hrát online
+**<https://vtfteam.github.io/orech1/>**
+
+## Spuštění lokálně
 ES moduly vyžadují HTTP server (ne `file://`):
 ```bash
 cd orech1
@@ -32,3 +35,6 @@ Menu: klávesy **1–4** zvolí počet hráčů, **mezerník** spustí hru. **M*
 ## Dokumentace
 - Architektura: [`docs/claude/ARCHITECTURE.md`](docs/claude/ARCHITECTURE.md)
 - Dev proces / testy: [`docs/claude/DEV_PROCESS.md`](docs/claude/DEV_PROCESS.md)
+
+## Licence
+[MIT](LICENSE)
